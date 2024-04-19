@@ -3,3 +3,77 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#controls {
+  display: flex;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#controls * {
+  width: fit-content;
+  height: fit-content;
+  min-width: unset !important;
+  min-height: unset !important;
+  pointer-events: all;
+}
+
+#controls .acelerator_container {
+  transform: rotateZ(270deg);
+  position: absolute;
+  bottom: 100px;
+  left: 10px;
+}
+
+.info {
+  /* font-weight: bold; */
+  font-size: 1.2rem;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+  padding: 12px;
+  margin: 8px auto;
+  border-radius: 8px;
+  width: 90% !important;
+}
+
+#acelerator {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgb(29, 29, 29);
+  border: 1px solid rgb(49, 49, 49);
+  cursor: grab;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+#acelerator::-webkit-slider-thumb {
+  border-radius: 4px; /*Removes default border-radius that FF applies*/
+  border: 1px solid rgb(49, 49, 49);
+  background-color: #0d0d0d;
+  background-image: linear-gradient(315deg, #191919 0%, #2f2f2f 74%);
+  height: 2.5rem;
+  width: 1rem;  
+}
+
+/***** Thumb Styles *****/
+/***** Firefox *****/
+#acelerator[type="range"]::-moz-range-thumb {
+  border-radius: 4px; /*Removes default border-radius that FF applies*/
+  border: 1px solid rgb(49, 49, 49);
+  background-color: #0d0d0d;
+  background-image: linear-gradient(315deg, #191919 0%, #2f2f2f 74%);
+  height: 2.5rem;
+  width: 1rem;
+}
